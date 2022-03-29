@@ -20,3 +20,5 @@ spec:
       username: "admin"
       password: "admin"
     extraPlugins: "rabbitmq_federation rabbitmq_federation_management"
+    service:
+      type: NodePort
