@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "amqp://guest:guest@rabbitmq.rabbitmq.svc.cluster.local:5672"
+      value: "guest:guest@rabbitmq.rabbitmq.svc.cluster.local:5672"
     - name: durable
       value: false
