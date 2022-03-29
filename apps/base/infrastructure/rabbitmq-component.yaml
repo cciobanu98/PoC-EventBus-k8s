@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "amqp://rabbitmq.rabbitmq.svc.cluster.local:5672"
+      value: "amqp://10.43.220.94:5672"
     - name: durable
       value: false
