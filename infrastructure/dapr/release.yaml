@@ -15,4 +15,4 @@ spec:
   interval: 1h0m0s
   install:
     remediation:
-      retries: 4
+      retries: 3
