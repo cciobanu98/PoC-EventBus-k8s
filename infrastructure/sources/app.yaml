@@ -4,4 +4,4 @@ metadata:
   name: app
 spec:
   interval: 30m
-  url: https://cciobanu98.github.io/poc-k8s-eventbus-apps
+  url: https://cciobanu98.github.io/poc-k8s-eventbus-apps/
