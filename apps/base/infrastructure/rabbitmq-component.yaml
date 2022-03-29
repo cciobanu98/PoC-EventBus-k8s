@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "admin:admin@rabbitmq.rabbitmq.svc.cluster.local:5672"
+      value: "admin:admin@rabbitmq.rabbitmq:5672"
     - name: durable
       value: false
