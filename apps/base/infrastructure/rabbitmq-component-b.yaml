@@ -1,12 +1,12 @@
 apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
-  name: pubsub
+  name: pubsubB
 spec:
   type: pubsub.rabbitmq
   version: v1
   metadata:
     - name: host
-      value: "amqp://admin:admin@host.k3d.internal:8082"
+      value: "amqp://admin:admin@host.k3d.internal:8084"
     - name: durable
       value: false

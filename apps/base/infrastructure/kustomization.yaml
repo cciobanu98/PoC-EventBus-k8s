@@ -3,4 +3,5 @@ kind: Kustomization
 namespace: app
 resources:
   - namespace.yaml
-  - rabbitmq-component.yaml
+  - rabbitmq-component-a.yaml
+  - rabbitmq-component-b.yaml
