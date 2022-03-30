@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "amqp://admin:admin@rabbitmq.rabbitmq:5672"
+      value: "amqp://admin:admin@host.docker.internal:8082"
     - name: durable
       value: false
