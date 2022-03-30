@@ -22,5 +22,5 @@ spec:
     extraPlugins: "rabbitmq_federation rabbitmq_federation_management"
     service:
       type: NodePort
-      nodePort: 8082
-      managerNodePort: 8083
+      nodePort: 30080
+      managerNodePort: 30081
