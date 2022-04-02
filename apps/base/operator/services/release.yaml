@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: operator
+  namespace: app
+spec:
+  releaseName: services
+  chart:
+    spec:
+      chart: operator
+      sourceRef:
+        kind: HelmRepository
+        name: app
+        namespace: flux-system
+      version: "0.1.0"
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    image:
+      tag: "main"
+    podAnnotations:
+      dapr.io/enabled: "true"
+      dapr.io/app-id: "operator"
+      dapr.io/app-port: "80"

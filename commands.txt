@@ -1,0 +1,30 @@
+RABBIT_MQ:
+    NODE_PORT = 30080
+    MANAGER_PORT = 30081
+    
+    OPERATOR:
+        NODE_PORT = 8071
+        MANAGER_PORT = 8072
+    TENANT-A:
+        NODE_PORT = 8081
+        MANAGER_PORT = 8082
+    TENANT-B:
+        NODE_PORT = 8091
+        MANAGER_PORT = 8092
+
+K3D:
+    k3d cluster create operator -p "8071-8072:30080-30081@server:0"
+    k3d cluster create tenantA -p "8081-8082:30080-30081@server:0"
+    k3d cluster create tenantB -p "8091-8092:30080-30081@server:0"
+
+FLUX:
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/operator --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/tenantA --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/tenantB --personal
+
+FLUX-MONITORING:
+    kubectl -n flux-system get all
+    kubectl -n flux-system logs deploy/source-controller
+    kubectl -n flux-system logs deploy/kustomize-controller
+    kubectl -n flux-system logs deploy/helm-controller
+    flux get all --all-namespaces
