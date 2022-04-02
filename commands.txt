@@ -28,3 +28,8 @@ FLUX-MONITORING:
     kubectl -n flux-system logs deploy/kustomize-controller
     kubectl -n flux-system logs deploy/helm-controller
     flux get all --all-namespaces
+
+PORT-FORWARDING
+    kubectl port-forward <service> -n app 28000:80
+    kubectl port-forward <service> -n app 28001:80
+    kubectl port-forward <service> -n app 28002:80
