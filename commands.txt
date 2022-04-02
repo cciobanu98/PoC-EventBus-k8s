@@ -18,9 +18,20 @@ K3D:
     k3d cluster create tenantB -p "8091-8092:30080-30081@server:0"
 
 FLUX:
+    --Approach1
     flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/operator --personal
     flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/tenantA --personal
     flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach1/tenantB --personal
+
+    --Approach2
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach2/operator --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach2/tenantA --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach2/tenantB --personal
+
+    --Approach3
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach3/operator --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach3/tenantA --personal
+    flux bootstrap github --owner=cciobanu98 --repository=PoC-EventBus-k8s --branch=main --path=./clusters/approach3/tenantB --personal
 
 FLUX-MONITORING:
     kubectl -n flux-system get all
