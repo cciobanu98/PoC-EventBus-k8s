@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "amqp://admin:admin@host.k3d.internal:8072"
+      value: "amqp://admin:admin@host.k3d.internal:8071"
     - name: durable
       value: false
