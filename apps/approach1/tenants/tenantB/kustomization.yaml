@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: app
 resources:
   - ../infrastructure
-  - ../../base/tenants/services
+  - ../../base/tenants/tenantB/services
