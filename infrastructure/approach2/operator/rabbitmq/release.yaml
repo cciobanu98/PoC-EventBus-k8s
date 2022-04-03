@@ -30,8 +30,8 @@ spec:
             {
               "users": [
                 {
-                  "name": "{{ .Values.auth.username }}",
-                  "password": "{{ .Values.auth.password }}",
+                  "name": "myuser",
+                  "password": "myuser",
                   "tags": "administrator"
                 }
               ],
