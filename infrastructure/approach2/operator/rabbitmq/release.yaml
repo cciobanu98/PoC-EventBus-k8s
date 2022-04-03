@@ -24,7 +24,25 @@ spec:
       type: NodePort
       nodePort: 30080
       managerNodePort: 30081
-    load_definition:
-      enable: true
-    extraConfiguration: |
-      load_definitions = /app/load_definition.json
+      extraSecrets:
+        load-definition:
+          load_definition.json: |
+            {
+              "users": [
+                {
+                  "name": "{{ .Values.auth.username }}",
+                  "password": "{{ .Values.auth.password }}",
+                  "tags": "administrator"
+                }
+              ],
+              "vhosts": [
+                {
+                  "name": "/"
+                }
+              ]
+            }
+      loadDefinition:
+        enabled: true
+        existingSecret: load-definition
+      extraConfiguration: |
+        load_definitions = /app/load_definition.json

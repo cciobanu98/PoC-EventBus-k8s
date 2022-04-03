@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: rabbitmq
 resources:
   - namespace.yaml
-  - configuration.yaml
   - release.yaml
