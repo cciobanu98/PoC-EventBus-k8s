@@ -8,5 +8,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/approach2
+  path: ./infrastructure/approach2/tenantA
   prune: true
