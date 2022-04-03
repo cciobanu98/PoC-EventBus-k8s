@@ -40,7 +40,16 @@ FLUX-MONITORING:
     kubectl -n flux-system logs deploy/helm-controller
     flux get all --all-namespaces
 
-PORT-FORWARDING
+PORT-FORWARDING:
     kubectl port-forward <service> -n app 28000:80
     kubectl port-forward <service> -n app 28001:80
     kubectl port-forward <service> -n app 28002:80
+
+RABBIT_MQ_APPROACH_2:
+    OPERATOR:
+        rabbitmqctl set_parameter federation-upstream tenantA '{"uri":"amqp://admin:admin@host.k3d.internal:8081","expires":3600000}'
+        rabbitmqctl set_parameter federation-upstream tenantB '{"uri":"amqp://admin:admin@host.k3d.internal:8091","expires":3600000}'
+        rabbitmqctl set_policy --apply-to exchanges tenants ".*Tenant*." '{"federation-upstream-set":"all"}'
+    TENANTS:
+        rabbitmqctl set_parameter federation-upstream operator '{"uri":"amqp://admin:admin@host.k3d.internal:8071","expires":3600000}'
+        rabbitmqctl set_policy --apply-to exchanges tenants ".*Operator*." '{"federation-upstream-set":"all"}'
