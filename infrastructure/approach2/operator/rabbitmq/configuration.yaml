@@ -12,7 +12,7 @@ stringData:
           "name": "tenants",
           "pattern": ".*Tenant*.",
           "apply-to": "exchanges",
-          "definition": {"federation-upstream-set":"all"}
+          "definition": {"federation-upstream-set":"all"},
           "priority": 0
         }
       ],
