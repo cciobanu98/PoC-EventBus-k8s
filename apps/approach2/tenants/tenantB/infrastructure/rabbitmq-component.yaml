@@ -7,6 +7,6 @@ spec:
   version: v1
   metadata:
     - name: host
-      value: "amqp://admin:admin@rabbitmq-tenant-a.rabbitmq:5672"
+      value: "amqp://admin:admin@rabbitmq-tenant-b.rabbitmq:5672"
     - name: durable
       value: false
