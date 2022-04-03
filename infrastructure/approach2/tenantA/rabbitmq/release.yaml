@@ -16,7 +16,7 @@ spec:
     remediation:
       retries: 3
   values:
-    nameOverride: "tenantA"
+    nameOverride: "tenant-a"
     auth:
       username: "admin"
       password: "admin"
