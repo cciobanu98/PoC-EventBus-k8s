@@ -52,4 +52,4 @@ RABBIT_MQ_APPROACH_2:
         rabbitmqctl set_policy --apply-to exchanges tenants ".*Tenant*." '{"federation-upstream-set":"all"}'
     TENANTS:
         rabbitmqctl set_parameter federation-upstream operator '{"uri":"amqp://admin:admin@host.k3d.internal:8071","expires":3600000}'
-        rabbitmqctl set_policy --apply-to exchanges tenants ".*Operator*." '{"federation-upstream-set":"all"}'
+        rabbitmqctl set_policy --apply-to exchanges operator ".*Operator*." '{"federation-upstream-set":"all"}'
