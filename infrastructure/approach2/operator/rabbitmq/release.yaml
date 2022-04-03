@@ -25,5 +25,6 @@ spec:
       nodePort: 30080
       managerNodePort: 30081
     load_definition:
-      file: /app/load_definition.json
       enable: true
+    extraConfiguration: |
+      load_definitions = /app/load_definition.json
